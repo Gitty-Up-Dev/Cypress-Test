@@ -4,16 +4,18 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "node_modules/.bin/cypress open",
+    "testRunner": "node_modules/.bin/cypress open",
+    "test": "node_modules/.bin/cypress run",
     "testAll": "node_modules/.bin/cypress run",
     "cytest": "node_modules/.bin/cypress open",
-    "specExample": "node_modules/.bin/cypress run --headed --spec \"cypress/integration/Test3.js\"",
-    "specTest": "node_modules/.bin/cypress run --spec \"cypress/integration/Test1.js\"",
-    "specTestHeaded": "node_modules/.bin/cypress run --headed --spec \"cypress/integration/Test1.js\"",
-    "specTestChrome": "node_modules/.bin/cypress run --headed --browser chrome --spec \"cypress/integration/Test1.js\""
+    "specExample": "npm run test --headed --spec \"cypress/integration/Test3.js\"",
+    "specTest": "npm run test -- --spec \"cypress/integration/Test1.js\"",
+    "specTestNoExit": "npm run test -- --no-exit --spec \"cypress/integration/Test1.js\"",
+    "specTestHeaded": "npm run test -- --headed --spec \"cypress/integration/Test1.js\"",
+    "specTestChrome": "npm run test -- --headed --browser chrome --spec \"cypress/integration/Test1.js\""
   },
   "author": "",
-  "license": "ISC",
+  "license": "ISC", 
   "devDependencies": {
     "cypress": "^7.3.0",
     "cypress-iframe": "^1.0.1"
